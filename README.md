@@ -59,4 +59,3 @@ El proceso de juego es el siguiente:
     |0|0|0|1|1|0|0|*|1|1|
 
 4. Saltamos a la casilla 10, que está fuera del vector (el final es la casilla 9), y por lo tanto termina el juego.
-
