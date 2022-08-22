@@ -50,10 +50,10 @@ public class GameArray1D {
         return toret;
     }
 
-    public static boolean canReachEnd(final int[] BOARD, int leap, int startPos)
+    public static boolean canReachEnd(final int[] BOARD, int leap)
     {
         int oldie = -1;
-        int i = startPos;
+        int i = walk( BOARD, 0 );
 
         while( i < BOARD.length
             && oldie != i )
@@ -73,15 +73,7 @@ public class GameArray1D {
         int i = leap;
 
         if ( i < BOARD.length ) {
-            int startPos = walk( BOARD, 0 );
-
-            toret = false;
-            while( !toret
-                && startPos >= 0 )
-            {
-                toret = canReachEnd( BOARD, leap, startPos );
-                startPos -= 1;
-            }
+            toret = canReachEnd( BOARD, leap );
         }
 
         return toret;
