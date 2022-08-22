@@ -59,3 +59,5 @@ El proceso de juego es el siguiente:
     |0|0|0|1|1|0|0|*|1|1|
 
 4. Saltamos a la casilla 10, que está fuera del vector (el final es la casilla 9), y por lo tanto termina el juego.
+
+Para resolver este ejercicio, es posible aplicar una estrategia _eager_, o una estrategia más compleja, de _backtracking_. Explora las ramas de este repositorio para las soluciones correspondientes a estas estrategias.
