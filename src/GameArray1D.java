@@ -70,9 +70,8 @@ public class GameArray1D {
     public static boolean canWin(final int[] BOARD, int leap)
     {
         boolean toret = true;
-        int i = leap;
 
-        if ( i < BOARD.length ) {
+        if ( leap < BOARD.length ) {
             toret = canReachEnd( BOARD, leap );
         }
 
