@@ -32,7 +32,7 @@ Si un determinado juego puede ganarse, entonces se muestra "YES" en una sola lí
 
 ## Solución
 
-En esta rama, se resolverá de forma _eager_. Esto es, en cada paso, se intentará siempre caminar (y siempre hacia adelante), y cuando no se pueda avanzar, se saltará para superar el obstáculo y continuar avanzando o saltando hasta el final.
+En esta rama, se resolverá mediante _backtracking_. Se toma nota de cada paso, y cuando no se puede llegar a la solución, se elimina el último paso hasta completar todas las posibilidades del movimiento anterior, y se continúa retrocediendo (_backtracking_ o _vuelta atrás_) hasta que se han deshecho todos los pasos sin alcanzar la solución, o hasta que esta, finalmente se logra.
 
 ## Ejemplo
 
