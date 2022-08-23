@@ -15,15 +15,14 @@ public class GameArray1D {
         {
             BOARD[ pos ] = -1;
 
-            if ( canReachEnd( BOARD, leap, pos + 1 )
-              || canReachEnd( BOARD, leap, pos + leap )
-              || canReachEnd( BOARD, leap, pos - 1 ) )
+            if ( canReachEndRecursive( BOARD, leap, pos + 1 )
+              || canReachEndRecursive( BOARD, leap, pos + leap )
+              || canReachEndRecursive( BOARD, leap, pos - 1 ) )
             {
                 toret = true;
             }
         }
 
-        System.out.println( "reachEnd/ pos: " + pos + " = " + toret );
         return toret;
     }
 
