@@ -2,6 +2,9 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Stack;
+
+import javax.lang.model.util.ElementScanner6;
 
 
 public class GameArray1D {
@@ -26,12 +29,55 @@ public class GameArray1D {
         return toret;
     }
 
+    public static boolean canReachEndIterative(final int[] BOARD, int leap)
+    {
+        final Stack<Integer> STACK_POS = new Stack<>();
+        boolean toret = false;
+
+        STACK_POS.add( 0 );
+        while( !STACK_POS.isEmpty() ) {
+            int pos = STACK_POS.peek();
+
+            if ( pos >= BOARD.length ) {
+                toret = true;
+                STACK_POS.clear();
+            }
+            else
+            if ( ( pos + 1 ) >= BOARD.length
+              || ( STACK_POS.search( pos + 1 ) < 0
+                && BOARD[ pos + 1 ] == 0 ) )
+            {
+                STACK_POS.add( pos + 1 );
+            }
+            else
+            if ( ( pos + leap ) >= BOARD.length
+              || ( STACK_POS.search( pos + leap ) < 0
+                && BOARD[ pos + leap ] == 0 ) )
+            {
+                STACK_POS.add( pos + leap );
+            }
+            else
+            if ( ( pos - 1 ) >= 0
+              && ( STACK_POS.search( pos - 1 ) < 0 )
+              && BOARD[ pos - 1 ] == 0 )
+            {
+                STACK_POS.add( pos - 1 );
+            }
+            else {
+                BOARD[ pos ] = -1;
+                STACK_POS.pop();
+            }
+        }
+
+        return toret;
+    }
+
     public static boolean canWin(final int[] BOARD, int leap)
     {
         boolean toret = true;
 
         if ( leap < BOARD.length ) {
-            toret = canReachEndRecursive( BOARD, leap, 0 );
+            toret = canReachEndIterative( BOARD, leap );
         }
 
         return toret;
