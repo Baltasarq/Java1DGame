@@ -32,7 +32,7 @@ public class GameArray1D {
         boolean toret = true;
 
         if ( leap < BOARD.length ) {
-            toret = canReachEnd( BOARD, leap, 0 );
+            toret = canReachEndRecursive( BOARD, leap, 0 );
         }
 
         return toret;
